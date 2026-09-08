@@ -1,0 +1,29 @@
+---
+title: "M02-Introduction to Data Science in R-Reflection"
+author: "Nikolas Sahami"
+date: '`r format(Sys.time())`'
+format: 
+  html: 
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    code-link: true
+    embed-resources: true
+editor: visual
+execute: 
+  freeze: auto
+---
+
+# Quick Summary of What I Learned
+
+I did not know much about reproducible data science or literate coding prior to this assignment, so most of the information was new for me.
+
+## Reproducible Data Science
+
+One of the most important things I learned was that reproducible data science is very dependent on the organization and format of the projects. They should be organized so that someone else would be able to follow your steps exactly with minimal prior knowledge. One thing that stood out was the fact that data manipulation and cleanup should be done with code instead of through programs with a GUI, because the code creates a record of every step taken, and allows someone else to go in and manipulate the data in the exact same way you did.
+
+## Literate Coding
+
+The other videos taught me about literate coding and how combining code with visuals and written explanations in a single file makes the information much easier to understand. Quarto is one of the best tools for this because a .qmd file allows you to include code chunks and their outputs with regular written text. I like this because it allows me to explain my process next to the code that is actually doing it. I also learned about Git and GitHub, and how they can be used to track changes to files and allow me to go back to older versions of my work
+
+# Quarto
