@@ -88,7 +88,9 @@ Tidyverse is one thing that I have had a bit of experience with before starting 
 
 One new thing I learned was the actual concept of "tidy data", where each variable has its own column, each observation has its own row, and each value has its own cell, making the data much easier to organize and manipulate.
 
-The packages that stood out to me the most were `dplyr`, `tidyr`, and `ggplot2`. With `dplyr`, I can organize and manipulate the dataset using commands to filter rows, create variables, summarize data, and much more. `tidyr` can reshape messy data into a cleaner format, which then allows `ggplot2` to turn that data into visualizations like graphs or scatterplots. The video also talked about the pipe tool `%>%` or `|>`, which we have also been covering in *IBM5910: Data Wrangling and Visualization*, and I like that it allows multiple operations to be written in sequence, as opposed to in a bunch of separate steps.
+The packages that stood out to me the most were `dplyr`, `tidyr`, and `ggplot2`. With `dplyr`, I can organize and manipulate the dataset using commands to filter rows, create variables, summarize data, and much more. `tidyr` can reshape messy data into a cleaner format, while `ggplot2` can turn that data into visualizations like graphs or scatterplots. The video also talked about the pipe tool `%>%` or `|>`, which we have also been covering in *IBM5910: Data Wrangling and Visualization*, and I like that it allows multiple operations to be written in sequence, as opposed to in a bunch of separate steps.
+
+I learned that R can be used for almost the entire data analysis process, including importing data, cleaning and reorganizing it, performing calculations, summarizing results, and creating visualizations. Here is an example of that:
 
 ```{r}
 #| label: fig-clicks-per-platform
@@ -103,14 +105,43 @@ campaigns <- data.frame(
   clicks = c(800, 1000, 1200, 1400)
 )
 
-# Filter and summarize the data
+# group and summarize the data
 campaign_summary <- campaigns |> 
   group_by(platform) |> 
   summarize(average_clicks = mean(clicks))
 
 # Make a graph
 ggplot(campaign_summary, aes(x = platform, y = average_clicks)) +
-  geom_col()
+  geom_col() +
+  labs(
+    x = "Platform",
+    y = "Average Clicks"
+  )
 ```
 
 @fig-clicks-per-platform is an example I created using fake data that shows how R can take information and immediately turn it into a visualization inside the same Quarto document, which is one of the reasons I can see it being useful for marketing analysis and reporting.
+
+# Two More Helpful Packages
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+## `plotly`
+
+The first package I think could be useful for my career is `plotly`. In marketing, presenting data in a way that is understandable to viewers can be just as important as analyzing it. I like that `plotly` can create interactive visualizations where users can hover over data points, zoom in, and explore the information themselves. Instead of putting several static graphs into a presentation, an interactive visualization would allow the viewer to explore the results that are most relevant to them
+
+:::
+
+::: {.column width="50%"}
+
+## `shiny`
+
+Another package that stood out to me was `shiny`, which allows R to create interactive web applications. I think this could be especially valuable in marketing because I could create something like a dashboard for campaign results where a user could choose which metric they want to examine. The person using the dashboard would not necessarily need to understand R or see the code behind it, which makes this even more useful in a business environment because the person making decisions from the data will not always be the one analyzing it.
+
+:::
+
+::::
+
+# R vs. Python
+
