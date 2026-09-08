@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nikolas Sahami">
+<meta name="dcterms.date" content="2026-09-08">
 
 <title>M02-Introduction to Data Science in R-Reflection</title>
 <style>
@@ -20,6 +21,41 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -2203,7 +2239,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">September 8, 2026</p>
     </div>
   </div>
   
@@ -2217,18 +2253,61 @@ vertical-align: -.125em;
 
 <section id="quick-summary-of-what-i-learned" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Quick Summary of What I Learned</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Note:
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>I did not know much about reproducible data science or literate coding prior to this assignment, so most of the information was new for me.</p>
+</div>
+</div>
 <section id="reproducible-data-science" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="reproducible-data-science"><span class="header-section-number">1.1</span> Reproducible Data Science</h2>
 <p>One of the most important things I learned was that reproducible data science is very dependent on the organization and format of the projects. They should be organized so that someone else would be able to follow your steps exactly with minimal prior knowledge. One thing that stood out was the fact that data manipulation and cleanup should be done with code instead of through programs with a GUI, because the code creates a record of every step taken, and allows someone else to go in and manipulate the data in the exact same way you did.</p>
 </section>
 <section id="literate-coding" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="literate-coding"><span class="header-section-number">1.2</span> Literate Coding</h2>
-<p>The other videos taught me about literate coding and how combining code with visuals and written explanations in a single file makes the information much easier to understand. Quarto is one of the best tools for this because a .qmd file allows you to include code chunks and their outputs with regular written text. I like this because it allows me to explain my process next to the code that is actually doing it. I also learned about Git and GitHub, and how they can be used to track changes to files and allow me to go back to older versions of my work</p>
+<p>The other videos taught me about literate coding and how combining code with visuals and written explanations in a single file makes the information much easier to understand. Quarto is one of the best tools for this because a <code>.qmd</code> file allows you to include code chunks and their outputs with regular written text. I like this because it allows me to explain my process next to the code that is actually doing it. I also learned about Git and GitHub, and how they can be used to keep track of changes to files and allow me to go back to older versions of my work. It is also really interesting that GitHub Pages can publish the HTML code as a website directly through the terminal once I connect it to my account. For this file, I have already pushed my initial version to GitHub, and I will keep pushing my updates out, and then eventually publish it using the <code>gh-pages</code> command in the terminal.</p>
 </section>
 </section>
 <section id="quarto" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Quarto</h1>
+<p>To me, the most impressive thing about Quarto is that it can run code chunks next to plain text when it renders the document, and since it everything is written within the same source file, it can be exported in many different ways. We have only used the HTML format so far, but the fact that I could render this same file in a number of different formats makes it extremely versatile and I could see myself using it in the future. It could be rendered as:</p>
+<ul>
+<li><p>HTML</p></li>
+<li><p>A Word Document</p></li>
+<li><p>A PDF</p></li>
+<li><p>A presentation</p></li>
+</ul>
+<p>For example, I can insert a code chunk directly below this paragraph and have it run whenever the page is rendered:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">16</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">*</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 80</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Note:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Also in this code chunk, I used the code chunk option of <code>#| echo: true</code> to tell it to show the entire code instead of just the result. By inserting <code>#|</code> before, Quarto automatically knows to treat this as a command rather than another line in the operation.</p>
+</div>
+</div>
+<p>Before starting on this module, I always assumed that the report writing and the actual coding were entirely separate processes, but Quarto lets me do it all together. I love the features that it provides, such as the callout I used above this and the different formatting options, especially in the YAML header, and I like that it can be edited through both the source code directly and the visual editor. While I have been trying to do this entire assignment through the Source panel, I like going back and forth with the Visual editor to see my edits more clearly and ensure everything is formatted the way I would like.</p>
+<p>I could definitely see myself using Quarto for school, especially in classes that require large written reports with calculations. I am not sure if I would use it so much in my everyday career, but I could absolutely see its use in creating files or presentations where I need a combination of text, data, and visualizations. I also really like how easily editable everything is through the source code, and I can always re-render it quickly instead of manually rebuilding charts and trying to correctly format data in a service like Google Slides or PowerPoint.</p>
 </section>
 
 </main>

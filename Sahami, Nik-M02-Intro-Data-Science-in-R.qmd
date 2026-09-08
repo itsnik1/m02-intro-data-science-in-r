@@ -16,7 +16,11 @@ execute:
 
 # Quick Summary of What I Learned
 
+::: callout-note
+## Note:
+
 I did not know much about reproducible data science or literate coding prior to this assignment, so most of the information was new for me.
+:::
 
 ## Reproducible Data Science
 
@@ -24,6 +28,36 @@ One of the most important things I learned was that reproducible data science is
 
 ## Literate Coding
 
-The other videos taught me about literate coding and how combining code with visuals and written explanations in a single file makes the information much easier to understand. Quarto is one of the best tools for this because a .qmd file allows you to include code chunks and their outputs with regular written text. I like this because it allows me to explain my process next to the code that is actually doing it. I also learned about Git and GitHub, and how they can be used to track changes to files and allow me to go back to older versions of my work
+The other videos taught me about literate coding and how combining code with visuals and written explanations in a single file makes the information much easier to understand. Quarto is one of the best tools for this because a `.qmd` file allows you to include code chunks and their outputs with regular written text. I like this because it allows me to explain my process next to the code that is actually doing it. I also learned about Git and GitHub, and how they can be used to keep track of changes to files and allow me to go back to older versions of my work. It is also really interesting that GitHub Pages can publish the HTML code as a website directly through the terminal once I connect it to my account. For this file, I have already pushed my initial version to GitHub, and I will keep pushing my updates out, and then eventually publish it using the `gh-pages` command in the terminal.
 
 # Quarto
+
+To me, the most impressive thing about Quarto is that it can run code chunks next to plain text when it renders the document, and since it everything is written within the same source file, it can be exported in many different ways. We have only used the HTML format so far, but the fact that I could render this same file in a number of different formats makes it extremely versatile and I could see myself using it in the future. It could be rendered as:
+
+- HTML
+
+- A Word Document
+
+- A PDF
+
+- A presentation
+
+For example, I can insert a code chunk directly below this paragraph and have it run whenever the page is rendered:
+
+```{r}
+#| echo: true
+
+x <- 5
+y <- 16
+x * y
+```
+
+::: callout-tip
+## Note:
+
+Also in this code chunk, I used the code chunk option of `#| echo: true` to tell it to show the entire code instead of just the result. By inserting `#|` before, Quarto automatically knows to treat this as a command rather than another line in the operation.
+:::
+
+Before starting on this module, I always assumed that the report writing and the actual coding were entirely separate processes, but Quarto lets me do it all together. I love the features that it provides, such as the callout I used above this and the different formatting options, especially in the YAML header, and I like that it can be edited through both the source code directly and the visual editor. While I have been trying to do this entire assignment through the Source panel, I like going back and forth with the Visual editor to see my edits more clearly and ensure everything is formatted the way I would like.
+
+I could definitely see myself using Quarto for school, especially in classes that require large written reports with calculations. I am not sure if I would use it so much in my everyday career, but I could absolutely see its use in creating files or presentations where I need a combination of text, data, and visualizations. I also really like how easily editable everything is through the source code, and I can always re-render it quickly instead of manually rebuilding charts and trying to correctly format data in a service like Google Slides or PowerPoint.
