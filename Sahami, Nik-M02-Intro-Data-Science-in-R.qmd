@@ -32,7 +32,7 @@ The other videos taught me about literate coding and how combining code with vis
 
 # Quarto
 
-To me, the most impressive thing about Quarto is that it can run code chunks next to plain text when it renders the document, and since it everything is written within the same source file, it can be exported in many different ways. We have only used the HTML format so far, but the fact that I could render this same file in a number of different formats makes it extremely versatile and I could see myself using it in the future. It could be rendered as:
+To me, the most impressive thing about Quarto is that it can run code chunks next to plain text when it renders the document, and since everything is written within the same source file, it can be exported in many different ways. We have only used the HTML format so far, but the fact that I could render this same file in a number of different formats makes it extremely versatile and I could see myself using it in the future. It could be rendered as:
 
 - HTML
 
@@ -55,9 +55,62 @@ x * y
 ::: callout-tip
 ## Note:
 
-Also in this code chunk, I used the code chunk option of `#| echo: true` to tell it to show the entire code instead of just the result. By inserting `#|` before, Quarto automatically knows to treat this as a command rather than another line in the operation.
+Also in this code chunk, I used the code chunk option of `#| echo: true` to tell it to show the entire code instead of just the result. By inserting `#|` before, Quarto automatically knows to treat this as a code-cell option rather than part of the R code being executed.
 :::
 
 Before starting on this module, I always assumed that the report writing and the actual coding were entirely separate processes, but Quarto lets me do it all together. I love the features that it provides, such as the callout I used above this and the different formatting options, especially in the YAML header, and I like that it can be edited through both the source code directly and the visual editor. While I have been trying to do this entire assignment through the Source panel, I like going back and forth with the Visual editor to see my edits more clearly and ensure everything is formatted the way I would like.
 
 I could definitely see myself using Quarto for school, especially in classes that require large written reports with calculations. I am not sure if I would use it so much in my everyday career, but I could absolutely see its use in creating files or presentations where I need a combination of text, data, and visualizations. I also really like how easily editable everything is through the source code, and I can always re-render it quickly instead of manually rebuilding charts and trying to correctly format data in a service like Google Slides or PowerPoint.
+
+# The Reproducibility Crisis
+
+One of the most important things I learned from the reproducibility crisis video was the difference between reproducibility and replicability. While I had heard both terms before, I probably would have used them interchangeably. The video explained the difference as:
+
+::: panel-tabset
+## Reproducibility
+
+Reproducibility means obtaining the same computational results using the exact same input data, code, and analysis conditions.
+
+## Replicability
+
+Replicability means getting consistent results through an independent study that collects its own data to investigate the same scientific question. It does not require the exact same steps to be followed
+:::
+
+Another thing that stood out to me was how difficult it can be to recreate research, even when the original researcher is the one trying to do it. One of the statistics mentioned that nearly 90% of scientists surveyed believed there was either a significant or slight reproducibility crisis, and I found that pretty concerning.
+
+Especially in marketing, where so much of the field relies on data to make decisions, being unable to reproduce someone else's findings can be a big issue. Marketing research can involve surveys, customer data, advertising performance, sales information, and many other sources, so if someone only shares their final report or findings, it can often be very difficult for another person to determine exactly how they reached their conclusions. This can be a major problem when these results are being used to make important business decisions for a company.
+
+Quarto is a great way to help address this issue because all the calculations and data manipulation can be put in the same file as the findings and written report. That way it can generate the results every time the document is rendered instead of having to rely on someone making important changes and transferring that final data to their report. Additionally, Git and GitHub can be very helpful in keeping track of the changes to a `.qmd` file over time, and being able to go back and restore previous versions. It is also very helpful that GitHub can directly publish webpages that anyone can access. This makes sharing the final report easier because it provides a way to distribute the final report without having to send different versions of the document back and forth.
+
+# Tidyverse and R
+
+Tidyverse is one thing that I have had a bit of experience with before starting this module, so not all of the information was new to me. The main thing about Tidyverse is that it is actually a collection of other packages instead of just one. They are all designed to work together using a similar structure and syntax, and they allow for a lot of data formatting and cleaner observation, hence the name *tidy*-verse.
+
+One new thing I learned was the actual concept of "tidy data", where each variable has its own column, each observation has its own row, and each value has its own cell, making the data much easier to organize and manipulate.
+
+The packages that stood out to me the most were `dplyr`, `tidyr`, and `ggplot2`. With `dplyr`, I can organize and manipulate the dataset using commands to filter rows, create variables, summarize data, and much more. `tidyr` can reshape messy data into a cleaner format, which then allows `ggplot2` to turn that data into visualizations like graphs or scatterplots. The video also talked about the pipe tool `%>%` or `|>`, which we have also been covering in *IBM5910: Data Wrangling and Visualization*, and I like that it allows multiple operations to be written in sequence, as opposed to in a bunch of separate steps.
+
+```{r}
+#| label: fig-clicks-per-platform
+#| echo: true
+#| fig-cap: "Average clicks by social media platform"
+
+library(tidyverse)
+
+# Create variables and data
+campaigns <- data.frame(
+  platform = c("Instagram", "Instagram", "TikTok", "TikTok"),
+  clicks = c(800, 1000, 1200, 1400)
+)
+
+# Filter and summarize the data
+campaign_summary <- campaigns |> 
+  group_by(platform) |> 
+  summarize(average_clicks = mean(clicks))
+
+# Make a graph
+ggplot(campaign_summary, aes(x = platform, y = average_clicks)) +
+  geom_col()
+```
+
+@fig-clicks-per-platform is an example I created using fake data that shows how R can take information and immediately turn it into a visualization inside the same Quarto document, which is one of the reasons I can see it being useful for marketing analysis and reporting.
