@@ -28,7 +28,7 @@ One of the most important things I learned was that reproducible data science is
 
 ## Literate Coding
 
-The other videos taught me about literate coding and how combining code with visuals and written explanations in a single file makes the information much easier to understand. Quarto is one of the best tools for this because a `.qmd` file allows you to include code chunks and their outputs with regular written text. I like this because it allows me to explain my process next to the code that is actually doing it. I also learned about Git and GitHub, and how they can be used to keep track of changes to files and allow me to go back to older versions of my work. It is also really interesting that GitHub Pages can publish the HTML code as a website directly through the terminal once I connect it to my account. For this file, I have already pushed my initial version to GitHub, and I will keep pushing my updates out, and then eventually publish it using the `gh-pages` command in the terminal.
+The other videos taught me about literate coding and how combining code with visuals and written explanations in a single file makes the information much easier to understand. Quarto is one of the best tools for this because a `.qmd` file allows you to include code chunks and their outputs with regular written text. I like this because it allows me to explain my process next to the code that is actually doing it. I also learned about Git and GitHub, and how they can be used to keep track of changes to files and allow me to go back to older versions of my work. It is also really interesting that Quarto can be published through GitHub Pages using commands in the terminal once I connect it to my account. For this file, I have already pushed my initial version to GitHub, and I will keep pushing my updates out, and then eventually publish it using the `gh-pages` command in the terminal.
 
 # Quarto
 
@@ -123,25 +123,22 @@ ggplot(campaign_summary, aes(x = platform, y = average_clicks)) +
 
 # Two More Helpful Packages
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="50%"}
-
 ## `plotly`
 
 The first package I think could be useful for my career is `plotly`. In marketing, presenting data in a way that is understandable to viewers can be just as important as analyzing it. I like that `plotly` can create interactive visualizations where users can hover over data points, zoom in, and explore the information themselves. Instead of putting several static graphs into a presentation, an interactive visualization would allow the viewer to explore the results that are most relevant to them
-
 :::
 
 ::: {.column width="50%"}
-
 ## `shiny`
 
 Another package that stood out to me was `shiny`, which allows R to create interactive web applications. I think this could be especially valuable in marketing because I could create something like a dashboard for campaign results where a user could choose which metric they want to examine. The person using the dashboard would not necessarily need to understand R or see the code behind it, which makes this even more useful in a business environment because the person making decisions from the data will not always be the one analyzing it.
-
 :::
-
-::::
+:::::
 
 # R vs. Python
 
+After watching all three videos ([Practitioner](https://www.youtube.com/watch?v=JAEs5IAhAYY), [Professor](https://www.youtube.com/watch?v=wWABGUGv-Bg), and [*Hello Quarto*](https://www.youtube.com/watch?v=p7Hxu4coDl8&t=1717s)), I think my biggest takeaway is that it is a pretty subjective argument and mainly depends on which one the user is most comfortable with and what they are trying to accomplish. **R** seems especially strong for statistics, data analysis, and visualization, while **Python** is a more general-purpose programming language that can also be used for things like software development and automation. Since I am currently doing more data analysis and visualization work, I think using **R** makes sense for me. That being said, I would definitely be open to learning **Python** in the future as it sounds like a great skill to have. The professor from University of Michigan also mentioned that there is no perfect programming language and that learning the concepts for your first language makes learning another one much easier, so I think they should be treated less as competitors and more just as different tools for different tasks.
+
+The *Hello Quarto* video also showed that people using different languages can still contribute to the same project. One team member could work primarily in **R** and **RStudio** while another could use **Python** and **Jupyter**, and Quarto can handle the different code execution engines to produce a consistent final product. They can then use tools like GitHub to contribute their work to the same shared project. This is really interesting to me because it makes the debate much simpler and shows that people can use the tools they are most comfortable with or that are best suited for their particular task without having to make any big changes.
